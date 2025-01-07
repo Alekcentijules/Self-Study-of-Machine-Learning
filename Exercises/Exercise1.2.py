@@ -1,13 +1,14 @@
-def vowel_count(text) -> str:
+def vowel_count(text: str) -> int:
     count = 0
-    text.lower()
-    for word in text:
-        if word in ("aeiouy"):
+    text = text.lower()
+    vowels = set("aeiouy")
+    for char in text:
+        if char in vowels:
             count += 1
     return count
 
 user_input = input("Enter a text: ")
 result = vowel_count(user_input)
 
-print(result)
+print(f"Number of vowels: {result}")
 

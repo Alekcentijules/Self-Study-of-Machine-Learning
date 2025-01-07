@@ -1,15 +1,7 @@
-def even_number(number):
+def even_number(number: int) -> bool:
     return number % 2 == 0
 
-user_input = float(input("Enter a number: "))
+user_input = int(input("Enter a number: "))
 result = even_number(user_input)
 
-print(result)
-
-
-
-
-
-
-
-
+print(f"Is the number even? {result}")
