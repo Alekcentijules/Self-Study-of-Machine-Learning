@@ -1,20 +1,20 @@
-import random
-
-def del_num_div(num_div_del: int) -> list:
+def devisor(num_div_del: int) -> list:
     if num_div_del == 0:
         raise ZeroDivisionError("Error: You cannot division by zero!")
     numbers = list(range(1, 101))
-    filter_numbers = [num for num in numbers if num % num_div_del != 0]
-    return filter_numbers
+    filtered_numbers = [num for num in numbers if num % num_div_del != 0]
+    return filtered_numbers
 
 try:
-    user_input = int(input("Enter a number: "))
-    result = del_num_div(user_input)
-    print(f"Your list: {result}")
+    user_input = int(input("Enter a positive number: "))
+    if user_input <= 0:
+        raise ValueError("Error: Please enter a positive number greater than zero!")
+    result = devisor(user_input)
+    print(f"Filtered list (1-100): {result}")
 except ZeroDivisionError as err:
     print(err)
-except ValueError:
-    print("Error: Please enter a valid number.")
+except ValueError as err:
+    print(err)
 
 
 
